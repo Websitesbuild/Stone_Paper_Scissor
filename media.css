@@ -1,0 +1,25 @@
+@media (min-width: 412px) and (max-width: 767px) {
+    .container{
+        padding: 8px;
+        height: 100%;
+    }
+    .game-box{
+        max-width: 400px;
+        gap: 20px;
+    }
+    h1{
+        font-size: 24px;
+    }
+    .img-box{
+        width: 100%;
+    }
+    .img{
+        width: 200px;
+    }
+    .play-btns{
+        margin-bottom: 30px;
+        flex-direction: column;
+        gap: 20px;
+        padding:0 10px;
+    }
+}
