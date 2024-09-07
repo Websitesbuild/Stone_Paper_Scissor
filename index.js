@@ -14,6 +14,7 @@ option.forEach(element => {
     element.addEventListener('click',(e)=>{
         let btnName = e.target.innerHTML.toLowerCase();
         if(btnName == 'rock' || btnName == 'paper' || btnName == 'scissor'){
+            winText.classList.add('hide')
             winText.innerHTML = ''
             const playerChoice = btnName
             const computerChoice = choice[Math.floor(Math.random()*3)]
@@ -36,6 +37,7 @@ option.forEach(element => {
             playerPoint = 0;
             computer.innerHTML = `Computer Points: ${computerPoint}`
             player.innerHTML = `Player Points: ${playerPoint}`
+            winText.classList.add('hide')
             winText.innerHTML = ''
         }
         else if(btnName == 'quit'){
@@ -47,7 +49,7 @@ option.forEach(element => {
 });
 
 function updatePoints(){
-    
+    winText.classList.add('hide')
     computer.innerHTML = `Computer Points: ${computerPoint}`
     player.innerHTML = `Your Points: ${playerPoint}`
 }
@@ -59,19 +61,20 @@ function checkWin(computerChoice,playerChoice){
     }
     else{
         
-        if(computerChoice == 'rock' && playerChoice == 'paper' || computerChoice == 'paper' && playerChoice == 'rock' ){
+        if(playerChoice == 'rock'){
             computerChoice == 'paper'?computerPoint++:playerPoint++
             winner = computerChoice=='paper'?'Computer':'You'
         }
-        else if(computerChoice == 'scissor' && playerChoice == 'rock' || computerChoice == 'rock' && playerChoice == 'scissor'){
+        else if(playerChoice == 'scissor'){
             computerChoice == 'rock'?computerPoint++:playerPoint++
             winner = computerChoice=='rock'?'Computer':'You'
         }
-        else if(computerChoice == 'paper' && playerChoice == 'scissor' || computerChoice == 'scissor' && playerChoice == 'paper'){
+        else if(playerChoice == 'paper'){
             computerChoice == 'scissor'?computerPoint++:playerPoint++
             winner = computerChoice=='scissor'?'Computer':'You'
         }
 
+        winner == 'Computer' ? winText.style.backgroundColor = 'red': winText.style.backgroundColor = 'green'
         winText.innerHTML = `${winner} Win!!`
     }
     updatePoints()
