@@ -57,6 +57,7 @@ function updatePoints(){
 function checkWin(computerChoice,playerChoice){
     let winner;
     if(computerChoice == playerChoice){
+        winText.style.backgroundColor = 'red'
         winText.innerHTML = 'Draw !!'
     }
     else{
