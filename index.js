@@ -49,7 +49,7 @@ option.forEach(element => {
 });
 
 function updatePoints(){
-    winText.classList.add('hide')
+    winText.classList.remove('hide')
     computer.innerHTML = `Computer Points: ${computerPoint}`
     player.innerHTML = `Your Points: ${playerPoint}`
 }
