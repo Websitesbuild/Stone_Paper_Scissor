@@ -34,7 +34,9 @@ h2{
     max-width: 800px;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    height: 300px;
+    margin-bottom: 10px;
+    gap: 15px;
 }
 .img-1,.img-2{
     display: flex;
@@ -42,13 +44,16 @@ h2{
     max-width: 400px;
     max-height: 300px;
     align-items: center;
-    background-size: contain;
+}
+img{
+    object-fit: cover;
 }
 .winner{
     font-size: 24px;
     font-weight: bold;
     color: #fff;
     padding: 10px 0;
+    margin-bottom: 20px;
 }
 .points{
     margin-top: 20px;
